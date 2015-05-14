@@ -1,0 +1,60 @@
+var userChoice = prompt("Do you choose rock, paper, scissors or Edward Scissorhands?");
+var computerChoice = Math.random();
+if (computerChoice <= 0.25) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.50) {
+	computerChoice = "paper";
+} else if(computerChoice <= 0.75) {
+	computerChoice = "scissors";
+} else {
+    computerChoice = "Edward Scissorhands";
+}
+
+console.log("Computer: " + computerChoice);
+
+var compare = function(choice1,choice2) {
+    if (choice1 === choice2) {
+        return "The result is a tie!";
+    }
+    else if (choice1 === "rock") {
+        if (choice2 === "scissors") {
+            return "rock wins";
+        } else if (choice2 === "paper") {
+            return "paper wins";
+        } else {
+            return "rock hits Edward Scissorhands in the head";
+        }
+    }
+    else if (choice1 === "paper") {
+        if (choice2 === "rock") {
+            return "paper wins";
+        } else if (choice2 === "scissors") {
+            return "scissors wins";
+        } else {
+            return "Edward Scissorhands cuts you up";
+        }
+    }
+    else if (choice1 === "scissors") {
+        if (choice2 === "rock") {
+            return "rock wins";
+        } else if (choice2 === "paper") {
+            return "scissors wins";
+        } else {
+            return "Clink, clank. Edward Scissorhands wins.";
+        }
+    }
+    else if (choice1 === "Edward Scissorhands") {
+        if (choice2 === "rock") {
+            return "rock hits Edward Scissorhands in the head";
+        } else if (choice2 === "paper") {
+            return "Edward Scissorhands cuts you up";
+        } else {
+            return "Clink, clank. Edward Scissorhands wins.";
+        }
+    }
+    else {
+        return "You didn't choose rock, paper, or scissors.";
+    }
+}
+
+compare(userChoice, computerChoice)
