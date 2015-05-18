@@ -1,0 +1,66 @@
+console.log("You come upon three shining stones set in the earth before you.  One of them is alabaster, one is topaz, and one onyx.");
+
+var user = prompt("Which magic stone do you want to take?").toLowerCase();
+
+var stone;
+var holdingPlace;
+var isTired = false;
+var isWeak = true;
+
+
+switch(user) {
+    case "alabaster":
+        stone = "alabaster";
+        console.log("You pick up the " + stone + " stone.");
+        holdingPlace = prompt("Where do you want to put it? In your pocket or in your knapsack?", "pocket or knapsack");
+        if (holdingPlace === "pocket") {
+            console.log("You slip the " + stone + " in your pocket.");
+        } else {
+            console.log("You put the " + stone + " in your knapsack.");
+        }
+        if (isTired === true && isWeak === true) {
+            console.log("You lie down and use the " + stone + " for a pillow.");
+        } else if (isTired === true || isWeak === true) {
+            console.log("You stumble onward, lugging the "+stone+" with you.");
+        } else {
+            console.log("You forge onward with great speed!");
+        }
+        break;
+    case "topaz":
+        stone = "topaz";
+        console.log("You pick up the " + stone + " stone.");
+        holdingPlace = prompt("Where do you want to put it?  In your pocket or in your knapsack?", "pocket or knapsack");
+        if (holdingPlace === "pocket") {
+            console.log("You slip the " + stone + " in your pocket.");
+        } else {
+            console.log("You put the " + stone + " in your knapsack.");
+        }
+        if (isTired === true && isWeak === true) {
+            console.log("You lie down and use the " + stone + " for a pillow.");
+        } else if (isTired === false || isWeak === false); {
+            console.log("You stumble onward, lugging the "+stone+" with you.");
+        } else; {
+            console.log("You forge onward with great speed!");
+        }
+        break;
+    case "onyx":
+        stone = "onyx";
+        console.log("You pick up the " + stone + " stone.");
+        holdingPlace = prompt("Where do you want to put it?  In your pocket or in your knapsack?", "pocket or knapsack");
+        if (holdingPlace === "pocket") {
+            console.log("You slip the " + stone + " in your pocket.");
+        } else {
+            console.log("You put the " + stone + " in your knapsack.");
+        }
+        if (isTired === true && isWeak === true) {
+            console.log("You lie down and use the " + stone + " for a pillow.");
+        } else if (isTired === true || isWeak === true); {
+            console.log("You stumble onward, lugging the "+stone+" with you.");
+        } else; {
+            console.log("You forge onward with great speed!");
+        }
+        break;
+    default:
+        console.log("That's not an options, fair traveller.");
+}
+}
