@@ -1,0 +1,9 @@
+function printTables() {
+    table = []
+    for ( i = 1 ; i <= 12 ; i++ )
+        for ( j = 1 ; j <= 12 ; j++ )
+            table.push(i + " x " + j + " = " + i*j)
+    return(table);
+}
+
+console.log(printTables())
