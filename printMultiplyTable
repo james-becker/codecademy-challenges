@@ -1,0 +1,11 @@
+function printMultiplyTable(upperLimit) {
+        var bigTable = [];
+        for ( j = 1 ; j <= upperLimit ; j++ ) {
+                var table = [];
+                for ( k = 1 ; k <= upperLimit ; k++ ) {
+                        table.push(j*k);
+                }
+                bigTable.push(table);
+        }
+        return bigTable;
+}
