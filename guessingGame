@@ -1,0 +1,61 @@
+var guessingGame = function(min,max) {
+  
+    //Determine the range for guessing and alert the user.
+    alert("The range for guessing is between " + min + " and " + max + ".");
+  
+    //Secret Number function
+    var newSecretNumber = function(min, max) {
+        secretNumber = Math.floor(Math.random() * (max - min + 1) + min);
+        return secretNumber;
+    };
+    
+    //Call the secret number function and alert the user.
+    newSecretNumber(min, max);
+    alert("The secret number is " + secretNumber + ".");
+  
+    //Initialize guessArray - INITIALIZE OUTSIDE GUESS FUNCTION!!!
+    var guessArray = []; 
+  
+    //Define guess function
+    var guessFunction = function() {
+      
+        //Get guess from user
+        var guess = prompt("Guess a number between " + min + " and " + max + ".");
+      
+        //Push guess to guessArray
+        if (guessArray === [] || guessArray.indexOf(guess) < 0 ) {
+          guessArray.push(guess);
+        }
+
+        //Set numberOfGuesses to guessArray.length
+        var numberOfGuesses = guessArray.length;
+      
+        //If user guesses correctly, alert user of how many tries it took and what they were
+        if (guess == secretNumber) {
+            if (guessArray.length == 1) {
+                alert("Nice job! The secret number was " + secretNumber + 
+                      "! It took you " + numberOfGuesses + " try!" + 
+                      "\nHere are the numbers you entered: " + guessArray);
+            } else {
+                alert("Nice job! The secret number was " + secretNumber + 
+                      "! It took you " + numberOfGuesses + " tries!" + 
+                      "\nHere are the numbers you entered: " + guessArray);
+            }
+          
+        //If user guesses too low, alert user and ask to try again
+        } else if (guess < secretNumber) {
+            alert("Your guess was too low. Try again.");
+            guessFunction();
+          
+        //If user guesses too high, alert user and ask to try again
+        } else if (guess > secretNumber) {
+            alert("Your guess was too high. Try again.");
+            guessFunction();
+        }
+    };
+  
+    //Run guess function
+    guessFunction();
+};
+
+guessingGame(12,22);
