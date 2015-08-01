@@ -1,0 +1,9 @@
+function returnLargestItem(array) {
+  var max = Math.max.apply(Math, array);
+  console.log(max);
+}
+
+function returnLargestItemViaSort(array) {
+  array.sort(function(a,b) {return b-a});
+  console.log(array[0]);
+}
