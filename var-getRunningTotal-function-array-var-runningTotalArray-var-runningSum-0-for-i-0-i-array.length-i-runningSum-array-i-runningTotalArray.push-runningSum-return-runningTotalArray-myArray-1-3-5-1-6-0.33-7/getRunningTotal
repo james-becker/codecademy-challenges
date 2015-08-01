@@ -1,0 +1,13 @@
+var getRunningTotal = function(array) {
+  var runningTotalArray = [];
+  var runningSum = 0;
+  for ( i = 0 ; i < array.length ; i++ ) {
+    runningSum += array[i];
+    runningTotalArray.push(runningSum);
+  }
+  return runningTotalArray;
+};
+
+
+myArray = [1, 3, 5, 1, 6, 0.33, 7/32, 42];
+console.log(getRunningTotal(myArray));
