@@ -1,0 +1,17 @@
+/*Write a function that concatenates two arrays.*/
+
+var arrayCat = function(array1, array2) {
+  var arrayOut = [];
+  for (i = 0 ; i < array1.length ; i++) {
+    arrayOut.push(array1[i]);
+  }
+  for (i = 0 ; i < array2.length ; i++) {
+    arrayOut.push(array2[i]);
+  }
+  return arrayOut;
+};
+
+var cats = ["Tabby","Black","Feral"];
+var dogs = ["Golden Retriever","Soi","Dingo"];
+
+console.log(arrayCat(cats,dogs));
