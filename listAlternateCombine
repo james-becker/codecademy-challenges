@@ -1,0 +1,16 @@
+/*Write a function that combines two lists by alternatingly
+taking elements, e. g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].*/
+
+var listAlternateCombine = function(array1, array2) {
+  var arrayOut = [];
+  for (i = 0 ; i < array1.length ; i++) {
+    arrayOut.push(array1[i]);
+    arrayOut.push(array2[i]);
+  }
+  return arrayOut;
+};
+
+var cats = ["Tabby","Black","Feral"];
+var dogs = ["Golden Retriever","Soi","Dingo"];
+
+console.log(listAlternateCombine(cats,dogs));
