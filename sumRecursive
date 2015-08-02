@@ -1,0 +1,21 @@
+var sumRecursive = function(array) {
+  if (array.length === 1) {
+    return array[0];
+  } else {
+    var popped = array.pop();
+    return sumRecursive(array) + popped;
+  }
+};
+
+console.log(sumRecursive([9,8,0.42,1000]));
+
+var sumRecursive2 = function(array) {
+  //base case
+  if (array.length === 1) {
+    return array[0];
+  } else {
+    return array.pop() + sumRecursive2(array);
+  }
+};
+
+console.log(sumRecursive2([9,8,0.42,2000]));
