@@ -1,0 +1,33 @@
+var textToBox = function(string) {
+  var array = string.split(" ");
+  var arraySlice = array.slice(0);
+  var arraySorted = arraySlice.sort(function(a,b){
+                                 return b.length - a.length;
+                               });
+
+  var arrayMaxLength = arraySorted[0].length;
+
+  function printOuterLines(string) {
+    var outerLine = "#";
+    for (i = 0 ; i <= arrayMaxLength + 2; i++ ) {
+      outerLine += "#";
+    }
+    console.log(outerLine);
+  }
+
+  function printTextLines(string) {
+    for (i = 0 ; i < array.length ; i++ ) {
+      var line = "# " + array[i];
+      for (j = 0 ; j < (arrayMaxLength - array[i].length) ; j ++) {
+        line += " ";
+      }
+      line += " #";
+      console.log(line);
+    }
+  }
+  printOuterLines(string);
+  printTextLines(string);
+  printOuterLines(string);
+};
+
+console.log(textToBox("THE CAT IS ASLEEP IN THE MEADOW"));
